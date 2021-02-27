@@ -2,7 +2,7 @@
 #
 # Description : Multi emulator Mednafen
 # Author      : Jose Cerrejon Gonzalez (ulysess@gmail_dot._com)
-# Version     : 1.0 (19/Jun/20)
+# Version     : 1.0.1 (17/Aug/20)
 # Compatible  : Raspberry Pi 1-2 (¿?), 3-4 (tested)
 #
 # Compile deps: libsndfile1-dev libsdl2-dev. Time compiling with RPi 4 not overclocked: 
@@ -11,7 +11,7 @@
 check_board || { echo "Missing file helper.sh. I've tried to download it for you. Try to run the script again." && exit 1; }
 clear
 
-URL_FILE="https://www.dropbox.com/s/nrkvem2vxjhxt74/mednafen_1-24.3_armhf.deb?dl=0"
+URL_FILE="https://misapuntesde.com/rpi_share/mednafen_1-24.3_armhf.deb"
 
 install() {
     if isPackageInstalled mednafen; then
@@ -25,8 +25,8 @@ install() {
 		sudo apt install -y libsndfile1
 	fi
 
-	if ! isPackageInstalled libsdl2; then
-		sudo apt install -y libsdl2
+	if ! isPackageInstalled libsdl2-2.0-0; then
+		sudo apt install -y libsdl2-2.0-0
 	fi
 
 	wget -4 -qO- -O /tmp/mednafen.deb "$URL_FILE" && sudo dpkg --force-all -i /tmp/mednafen.deb && rm /tmp/mednafen.deb

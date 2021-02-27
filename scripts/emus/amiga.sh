@@ -2,103 +2,136 @@
 #
 # Description : Amiberry Amiga emulator
 # Author      : Jose Cerrejon Gonzalez (ulysess@gmail_dot._com)
-# Version     : 1.4 (18/Jun/20)
+# Version     : 1.5.3 (07/Feb/21)
 # Compatible  : Raspberry Pi 1-4
 #
 . ../helper.sh || . ./scripts/helper.sh || . ./helper.sh || wget -q 'https://github.com/jmcerrejon/PiKISS/raw/master/scripts/helper.sh'
-check_board || { echo "Missing file helper.sh. I've tried to download it for you. Try to run the script again." && exit 1; }
 clear
+check_board || { echo "Missing file helper.sh. I've tried to download it for you. Try to run the script again." && exit 1; }
 
 INSTALL_DIR="$HOME/games"
-AMIBERRY_PI4="https://github.com/midwan/amiberry/releases/download/v3.1.3.1/amiberry-rpi4-v3.1.3.1.zip"
+AMIBERRY_VERSION="v3.3"
+PACKAGES=(libsdl2-image-2.0-0 libsdl2-ttf-2.0-0)
+PACKAGES_DEV=(libsdl2-dev libguichan-dev libsdl2-ttf2.0-dev libsdl-gfx1.2-dev libxml2-dev libflac-dev libmpg123-dev)
+RPI_MODEL=$(get_raspberry_pi_model_number)
+AMIBERRY_BIN="https://github.com/midwan/amiberry/releases/download/${AMIBERRY_VERSION}/amiberry-${AMIBERRY_VERSION}-rpi${RPI_MODEL}-sdl2-32bit.zip"
+GITHUB_PATH="https://github.com/midwan/amiberry.git"
 KICK_FILE="https://misapuntesde.com/res/Amiga_roms.zip"
 GAME="https://www.emuparadise.me/GameBase%20Amiga/Games/T/Turrican.zip"
-GAME2_DSK1="https://www.emuparadise.me/GameBase%20Amiga/Games/X/Xenon%202%20-%20Megablast_Disk1.zip"
-GAME2_DSK2="https://www.emuparadise.me/GameBase%20Amiga/Games/X/Xenon%202%20-%20Megablast_Disk2.zip"
-
+ICON_URL="https://raw.githubusercontent.com/midwan/amiberry/master/data/amiberry.png"
 INPUT=/tmp/amigamenu.$$
 
-trap 'rm $INPUT; exit' SIGHUP SIGINT SIGTERM
+runme() {
+    if [ ! -f "$INSTALL_DIR/amiberry/amiberry" ]; then
+        echo -e "\nFile does not exist.\n· Something is wrong.\n· Try to install again."
+        exit_message
+    fi
+    read -p "Press [ENTER] to run..."
+    cd "$INSTALL_DIR"/amiberry && ./amiberry
+    exit_message
+}
+
+remove_files() {
+    rm -rf "$INSTALL_DIR"/amiberry ~/.local/share/applications/amiberry.desktop
+}
+
+uninstall() {
+    read -p "Do you want to uninstall Amiberry (y/N)? " response
+    if [[ $response =~ [Yy] ]]; then
+        remove_files
+        if [[ -e "$INSTALL_DIR"/amiberry ]]; then
+            echo -e "I hate when this happens. I could not find the directory, Try to uninstall manually. Apologies."
+            exit_message
+        fi
+        echo -e "\nSuccessfully uninstalled."
+        exit_message
+    fi
+    exit_message
+}
+
+if [[ -e $INSTALL_DIR/amiberry/amiberry ]]; then
+    echo -e "Amiberry already installed.\n"
+    uninstall
+fi
+
+post_install() {
+    echo -e "\nPost install process. Just a moment..."
+    cat <<EOF >"$INSTALL_DIR"/amiberry/amiberry.sh
+#!/bin/bash
+cd ${HOME}/games/amiberry && ./amiberry
+EOF
+    chmod +x "$INSTALL_DIR"/amiberry/amiberry.sh
+    downloadROM
+    downloadKICK
+    make_desktop_entry
+    end_message
+}
 
 downloadKICK() {
-	echo -e "\nCopying Rickstarts ROMs...\n"
-	cd kickstarts
-    wget $KICK_FILE && unzip Amiga_roms.zip && mv kick13.rom kick.rom && rm Amiga_roms.zip
+    echo -e "\nCopying Rickstarts ROMs...\n"
+    download_and_extract "$KICK_FILE" "$INSTALL_DIR"/amiberry/kickstarts
+    mv "$INSTALL_DIR"/amiberry/kickstarts/kick13.rom "$INSTALL_DIR"/amiberry/kickstarts/kick.rom
 }
 
 downloadROM() {
-    wget $GAME && unzip -o *.zip && rm *.zip
+    download_and_extract "$GAME" .
 }
 
-mkDesktopEntry() {
-	if [[ ! -e ~/.local/share/applications/amiberry.desktop ]]; then
-cat << EOF > ~/.local/share/applications/amiberry.desktop
+make_desktop_entry() {
+    wget -q "$ICON_URL" -O "$INSTALL_DIR"/amiberry/amiberry.png
+    if [[ ! -e ~/.local/share/applications/amiberry.desktop ]]; then
+        cat <<EOF >~/.local/share/applications/amiberry.desktop
 [Desktop Entry]
 Name=Amiberry
-Exec=/home/pi/games/amiberry/amiberry
-Icon=terminal
+Exec=${INSTALL_DIR}/amiberry/amiberry.sh
+Path=${INSTALL_DIR}/amiberry/
+Icon=${INSTALL_DIR}/amiberry/amiberry.png
 Type=Application
 Comment=Amiga emulator port.
 Categories=Game;
-Path=/home/pi/games/amiberry/
 EOF
-	fi
-}
-
-instAMIBERRY() {
-    if  [[ -e $INSTALL_DIR/amiberry/amiberry ]]; then
-        read -p "Amiberry already installed. Press [ENTER] to go back to menu..."
-        exit
     fi
-    echo -e "Amiberry for Raspberry Pi\n=========================\n· More Info: https://github.com/midwan/amiberry\n· Kickstar ROMs & Turrican included.\n· Install path: $INSTALL_DIR/amiberry\n"
-    mkdir -p $INSTALL_DIR && cd $_
-    wget $AMIBERRY_PI4
-    unzip amiberry-rpi4-sdl2-v3.1.3.1.zip -d ./amiberry
-    rm amiberry-rpi4-sdl2-v3.1.3.1.zip
-    cd amiberry
-	chmod +x amiberry
-    downloadROM
-    downloadKICK
-    mkDesktopEntry
-    echo -e "Done!. Go to $INSTALL_DIR/amiberry and type: ./amiberry"
-    read -p "Press [Enter] to go back to menu..."
-    exit
 }
 
-compAMIBERRY() {
-    echo "Installing dependencies..."
-    sudo apt install -y libsdl-dev libguichan-dev libsdl-ttf2.0-dev libsdl-gfx1.2-dev libxml2-dev libflac-dev libmpg123-dev
-    mkdir -p $HOME/games && cd $_
+end_message() {
+    echo -e "\n\nDone!. You can play typing $INSTALL_DIR/amiberry/amiberry or opening the Menu > Games > Amiberry.\n"
+    runme
+}
+
+compile() {
+    install_packages_if_missing "${PACKAGES_DEV[@]}"
+    mkdir -p "$HOME"/sc && cd "$_" || exit 1
     echo "Cloning and compiling repo..."
-    git clone https://github.com/midwan/amiberry.git amiberry && cd $_
-    if [ $(uname -m) == 'armv7l' ]; then
-        make
+    git clone "$GITHUB_PATH" amiberry && cd "$_" || exit 1
+    if [ "$(uname -m)" == 'armv7l' ]; then
+        make -j"$(nproc)" OPTOPT="-march=armv8-a+crc -mtune=cortex-a53"
     else
-        make PLATFORM=rpi1
+        make -j"$(nproc)" PLATFORM=rpi1
     fi
     downloadKICK
-    echo -e "\nDone!. Type ./amiberry and have fun. TIP: F12=Menu."
+    echo -e "\nDone!. Compiled path: $HOME/sc/amiberry"
+    exit_message
 }
 
-menu() {
-
-while true
-do
-    dialog --clear   \
-        --title     "[ Amiberry Amiga emulator for Raspberry Pi 4 ]" \
-        --menu      "Select from the list:" 11 65 3 \
-        AMIBERRYI   "Amiberry binary (Recommended)" \
-        AMIBERRYC   "Compile Amiberry (latest). Time: ~22 minutes." \
-        Exit    "Exit" 2>"${INPUT}"
-
-    menuitem=$(<"${INPUT}")
-
-    case $menuitem in
-        AMIBERRYI) clear ; instAMIBERRY ;;
-        AMIBERRYC) clear ; compAMIBERRY ;;
-        Exit) exit ;;
-    esac
-done
+install() {
+    install_packages_if_missing "${PACKAGES[@]}"
+    download_and_extract "$AMIBERRY_BIN" "$INSTALL_DIR"
+    mv amiberry-rpi4-sdl2-32bit amiberry
+    # chmod +x "$INSTALL_DIR"/amiberry/amiberry
+    post_install
 }
 
-menu
+install_script_message
+echo "
+Amiberry for Raspberry Pi
+=========================
+
+ · Version ${AMIBERRY_VERSION}
+ · More Info: https://github.com/midwan/amiberry
+ · Kickstar ROMs & Turrican included.
+ · Install path: $INSTALL_DIR/amiberry
+ · TIP: F12 = Menu.
+"
+read -p "Press [ENTER] to continue..."
+
+install

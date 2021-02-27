@@ -1,3 +1,303 @@
+(22/02/21)
+==========
+
+· 👌 IMPROVE: New relases: RPiplay 1.2 (Airplay mirror). Scrcopy (Android mirror 1.17).
+
+· 👌 IMPROVE: Tweaks > Remove Packages > Remove Snap daemon.
+
+(21/02/21)
+==========
+
+· 👌 IMPROVE: New versin 1.8.0. New compiled versions of Blood, DOSBox-X 0.83. Refactor code.
+
+· 👌 IMPROVE: MagicAirCopy®. Now detect automatically if you have the file _res/magic-air-copy-pikiss.txt_ to use it.
+
+· 🐛 FIX: Games > Arx Fatalis & Quake 1 (shareware files missing).
+
+(07/02/21)
+==========
+
+· 📦 ADD: Emulators > Duckstation - PlayStation 1, aka. PSX Emulator.
+
+(06/02/21)
+==========
+
+· 👌 IMPROVE: Amiberry.
+
+· 👌 IMPROVE: Tweaks > Packages > Remove Microsoft VSCode source list (You can safely install it with PiKISS later 😉).
+
+(30/01/21)
+==========
+
+· 📦 ADD: Server > Remote Desktop with Nomachine, xRDP and VNC Server.
+
+(24/01/21)
+==========
+
+· 📦 ADD: Multimedia > Jellyfin (Stream media to any device from your own server).
+
+(17/01/21)
+==========
+
+· 📦 ADD: Games > Zendronum to play Doom + Heretic + Hexen + Strife. Shareware included.
+
+(12/01/21)
+==========
+
+· ❌ REMOVE: Internet > Cordless (not maintained anymore).
+
+(05/01/21)
+==========
+
+· 🐛 FIX: Games > Captain S shortcut.
+
+(03/01/21)
+==========
+
+· 🐛 FIX: Games > AVP, Diablo.
+
+· 👌 IMPROVE: Others > RPiPlay, Gl4ES, scrcpy.
+
+· 👌 IMPROVE: Games > Blood, Eduke32, SMario64
+
+· 👌 IMPROVE: Emulators > PSP, ResidualVM. Refactor code. Change /home/pi -> $HOME.
+
+(27/12/20)
+==========
+
+· 🐛 FIX: Links broken for StarCraft, StepMania, OpenMW and OpenBOR.
+
+(25/12/20)
+==========
+
+· 📦 ADD: Games > VVVVVV (Instead of jumping, you need to reverse gravity).
+
+(22/12/20)
+==========
+
+· 👌 IMPROVE: Games > Diablo I binaries upgraded to 1.1.0.
+
+(15/12/20)
+==========
+
+· 📦 ADD: Internet > Whatscli (Allow users to use WhatsApp via cli).
+
+· 👌 IMPROVE: Configure > Vulkan frozen on version 20.3.0 due some users reported problems with latest 21.0.0.
+
+(13/12/20)
+==========
+
+· 📦 ADD: Multimedia > Moonlight (Open source implementation of NVIDIA's GameStream).
+
+· 👌 IMPROVE: Others > SDL2.
+
+(06/12/20)
+==========
+
+· 📦 ADD: Games > Temptations (Retro platform game).
+
+(28/11/20)
+==========
+
+· 📦 ADD: Games > Open Claw (Platform 2D Captain Claw (1997) reimplementation).
+
+(22/11/20)
+==========
+
+· 📦 ADD: Games > StepMania.
+
+· 📦 ADD: Emulators > Redream (Sega Dreamcast).
+
+· 📦 ADD: Emulators > Bsnes (SuperNES).
+
+(09/11/20)
+==========
+
+· 📦 ADD: Others > Alacritty (Fastest terminal emulator in existence).
+
+(07/11/20)
+==========
+
+· 📦 ADD: Games > fheroes2 (Heroes of Might and Magic II engine)
+
+(05/11/20)
+==========
+
+· 📦 ADD: Games > StarCraft + Brood War expansion.
+
+· 👌 IMPROVE: Emulators > Box86.
+
+(04/11/20)
+==========
+
+· 📦 ADD: Others > Upgrade your boot loader on Raspberry Pi 4.
+
+· 👌 IMPROVE: Server > Pi-Hole (Ad-Blocker).
+
+(03/11/20)
+==========
+
+· 👌 IMPROVE: Emulators > mGBA Game Boy Advance Emulator.
+
+(24/10/20)
+==========
+
+· 👌 IMPROVE: GAMES > MagicAirCopy® with support for local dir/files.
+
+(19/10/20)
+==========
+
+· 🐛 FIX: GAMES > Diablo 1.
+
+(17/10/20)
+==========
+
+· 📦 ADD: Games > Return to Castle Wolfenstein.
+
+(14/10/20)
+==========
+
+· 👌 IMPROVE: Configure > Compile/update Vulkan Mesa driver.
+
+(12/10/20)
+==========
+
+· 👌 IMPROVE: Devs > Change OSSCode with native VSCode 32 or 64 bits.
+
+(07/10/20)
+==========
+
+· 🐛 FIX: Games > Openmw.
+
+(06/10/20)
+==========
+
+· 🐛 FIX: Internet > Zoom on Twister OS.
+
+· 🐛 FIX: Games > Openbor.
+
+(03/10/20)
+==========
+
+· 📦 ADD: Internet > Zoom using Box86.
+
+· 📦 ADD: Emulation > Box86 for Raspberrry Pi 2-4.
+
+(29/09/20)
+==========
+
+· 👌 IMPROVE: Games > OpenBor 3.0 (Street of Rage 2X included!).
+
+· 👌 IMPROVE: Others > SDL2 (Enable Vulkan support if compile yourself).
+
+(27/09/20)
+==========
+
+· 📦 ADD: Games > Quake.
+
+(20/09/20)
+==========
+
+· 📦 ADD: Games > Half Life.
+
+(11/09/20)
+==========
+
+· 📦 ADD: Games > Blake Stone.
+
+(07/09/20)
+==========
+
+· 📦 ADD: Games > Quake 3 Arena (with Vulkan support, High textures and some tweaks).
+
+(01/09/20)
+==========
+
+· 📦 ADD: Games > The Elder Scroll: Morrowind (OpenMW).
+
+· 📦 ADD: Others > Compile GL4ES.
+
+(29/08/20)
+==========
+
+· 📦 ADD: Emulators > VICE (Commodore 64).
+
+(27/08/20)
+==========
+
+· 📦 ADD: Games > Open Supaplex.
+
+(26/08/20)
+==========
+
+· 📦 ADD: Games > Serious Sam The First Encounter.
+
+(23/08/20)
+==========
+
+· 📦 ADD: Devs > TIC-80.
+
+(20/08/20)
+==========
+
+· 📦 ADD: Games > Spelunky Classic HD.
+
+(16/08/20)
+==========
+
+· 📦 ADD: Games > Serious Sam The Second Encounter.
+
+(15/08/20)
+==========
+
+· 📦 ADD: Devs > Code - OSS (VSCode fork).
+
+(13/08/20)
+==========
+
+· 📦 ADD: Others > Compile cool-retro-term.
+
+(11/08/20)
+==========
+
+· 👌 IMPROVE: Server > Nagios 4.
+
+· 🐛 FIX: Configure > Compile/update Vulkan Mesa driver (EXPERIMENTAL).
+
+(08/08/20)
+==========
+
+· 📦 ADD: Emulation > ResidualVM (Cross-platform 3D game interpreter for Monkey4 or The Longest Journey).
+
+(06/08/20)
+==========
+
+· 📦 ADD: Server > Jenkins CI.
+
+(02/08/20)
+==========
+
+· 📦 ADD: Games > Aliens versus Predator (1999 video game).
+
+(01/08/20)
+==========
+
+· 📦 ADD: Games > OpenXCom (UFO).
+
+· 👌 IMPROVE: Games > Hurrican (Remove glitches and add language support).
+
+· 👌 IMPROVE: Emulation > Amiberry.
+
+(31/07/20)
+==========
+
+· 📦 ADD: Others > ShaderToys for Pi 4 (Render over 100+ OpenGL ES 3.0 shaders).
+
+(30/07/20)
+==========
+
+· 📦 ADD: Games > Hurrican.
+
 (29/07/20)
 ==========
 
@@ -6,22 +306,22 @@
 (28/07/20)
 ==========
 
-· 📦 ADD: Games > Arx Libertatis
+· 📦 ADD: Games > Arx Libertatis.
 
 (27/07/20)
 ==========
 
-📦 ADD: Multimedia > Easy compile OBS (Open Broadcaster Software)
+📦 ADD: Multimedia > Easy compile OBS (Open Broadcaster Software).
 
 (25/07/20)
 ==========
 
-· 📦 ADD: Internet > Cordless (Discord client from cli)
+· 📦 ADD: Internet > Cordless (Discord client from cli).
 
 (24/07/20)
 ==========
 
-· 📦 ADD: Games > Quake ][
+· 📦 ADD: Games > Quake ][.
 
 (23/07/20)
 ==========
@@ -47,7 +347,7 @@
 (19/07/20)
 ==========
 
-· 📦 ADD: Games > Blood
+· 📦 ADD: Games > Blood.
 
 (17/07/20)
 ==========

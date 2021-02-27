@@ -13,41 +13,45 @@
 
 ## ⏰ Estimated hours of work so far
 
-* **620 hours**
+-   **815 hours**
 
 ## 💰 Total amount donated by users
 
-* $214,96
+-   $405,89.
 
-* I want to thank my two Patreons *David J Leto* and *Charles Paek* for trusting me ❤️
+-   I want to thank my patrons _James Carroll, David J Leto, Rodney Hester, Matthew Michink, Mathew Gracie & cxgr_ for trusting me ❤️
 
-## 📣 Stay tuned! 
+-   Others users who helped me with donations are: _Ben Daghita, Timo Westphal, danoga, Roman Borowinski, Lenny Tua, Dan Suter, nunnz, Pi-Mania, Bernd Titze_
 
-* 📬⠀Mail: <ulysess@gmail.com>
+## 📣 Stay tuned!
 
-* 📖⠀Blog (English & Spanish): [misapuntesde.com](https://misapuntesde.com/)
+-   📬⠀Mail: <ulysess@gmail.com>
 
-* 🟠⠀Bitcoin: 32XtfF8eKkWkAGJsHvBsjqsted5NKsGBcv
+-   📖⠀Blog (English & Spanish): [misapuntesde.com](https://misapuntesde.com/)
 
-* 💰⠀Patreon: [patreon.com/cerrejon](https://www.patreon.com/cerrejon?fan_landing=true)
+-   💰⠀Patreon: [patreon.com/cerrejon](https://www.patreon.com/cerrejon?fan_landing=true)
 
-* 🐦⠀Twitter: [@ulysess10](https://twitter.com/ulysess10)
+-   🐦⠀Twitter: [@ulysess10](https://twitter.com/ulysess10)
 
-* 👾⠀Discord for suggestions & support [thanks to Pi Labs](https://discord.gg/Y7WFeC5) 
+-   👾⠀Discord for suggestions & support [thanks to Pi Labs](https://discord.gg/Y7WFeC5)
 
-* 👨🏻‍💻⠀LinkedIn: [es.linkedin.com/in/jmcerrejon](https://es.linkedin.com/in/jmcerrejon/)
+-   👨🏻‍💻⠀LinkedIn: [es.linkedin.com/in/jmcerrejon](https://es.linkedin.com/in/jmcerrejon/)
 
-* 📣⠀Mewe (Spanish): [mewe.com](https://mewe.com/group/5c6bbed8f0e71669f228c457)
+-   📣⠀Mewe (Spanish): [mewe.com](https://mewe.com/group/5c6bbed8f0e71669f228c457)
 
 ## 🤝 Contributors
 
-* [huelvayork](https://github.com/huelvayork)
+-   [huelvayork](https://github.com/huelvayork)
 
-* Logo: grayduck
+-   Logo: grayduck
+
+-   **This project is not accepting money or any benefits**.
 
 ## 🎥 Check what **PiKISS** can do for you on my Youtube's channel:
 
-* [youtube.com > PIKISS](https://www.youtube.com/playlist?list=PLXhElW3ALmWh8p0mn1ZECawkKyF8QzNNP)
+-   [youtube.com > PIKISS](https://www.youtube.com/playlist?list=PLXhElW3ALmWh8p0mn1ZECawkKyF8QzNNP)
+
+# 🚨🚨 Read the new info about Data Files below 🚨🚨
 
 ## ENGLISH
 
@@ -63,73 +67,87 @@
 
 ### [ ChangeLog (dd/mm/yy)]
 
-### (29/07/20)
+### (22/02/21)
 
-· 👌 IMPROVE: Crispy Doom. Refactor code and uninstall option.
+· 👌 IMPROVE: New relases: RPiplay 1.2 (Airplay mirror). Scrcopy (Android mirror 1.17).
 
-### (28/07/20)
+· 👌 IMPROVE: Tweaks > Remove Packages > Remove Snap daemon.
 
-· 📦 ADD: Games > Arx Libertatis
+### (21/02/21)
 
-### (27/07/20)
+· 👌 IMPROVE: New version 1.8.0. New compiled versions of Blood, DOSBox-X 0.83. Refactor code.
 
-· 📦 ADD: Multimedia > Easy compile OBS (Open Broadcaster Software)
+· 👌 IMPROVE: MagicAirCopy®. Now detect automatically if you have the file _res/magic-air-copy-pikiss.txt_ to use it.
 
-### (25/07/20)
+· 🐛 FIX: Games > Arx Fatalis & Quake 1 (shareware files missing).
 
-· 📦 ADD: Internet > Cordless (Discord client from cli)
+### (07/02/21)
 
-### (24/07/20)
+· 📦 ADD: Emulators > Duckstation - PlayStation 1, aka. PSX Emulator.
 
-· 📦 ADD: Games > Quake ][
+### (06/02/21)
 
-### (23/07/20)
+· 👌 IMPROVE: Amiberry.
 
-· 📦 ADD: Emulation > Dolphin (Gamecube & Wii emulator. Wii not supported yet) (EXPERIMENTAL).
+· 👌 IMPROVE: Tweaks > Packages > Remove Microsoft VSCode source list (You can safely install it with PiKISS later 😉).
 
-· 🐛 FIX: Games > OpenBOR and Xump.
+### (30/01/21)
 
-### (22/07/20)
+· 📦 ADD: Server > Remote Desktop with Nomachine, xRDP and VNC Server.
 
-· 📦 ADD: PiKISS try to update automatically.
+### (24/01/21)
 
-· 📦 ADD: Others > Uninstall *PiKISS* 😢.
+· 📦 ADD: Multimedia > Jellyfin (Stream media to any device from your own server).
 
-· 👌 IMPROVE: Others > *SDL2* binary 2.0.13 or compile 2.0.12.
+### (17/01/21)
 
-### (21/07/20)
+· 📦 ADD: Games > Zendronum to play Doom + Heretic + Hexen + Strife. Shareware included.
 
-· 📦 ADD: Others > *Airplay* mirroring for *iDevices*.
+### (12/01/21)
 
-### (19/07/20)
+· ❌ REMOVE: Internet > Cordless (not maintained anymore).
 
-· 📦 ADD: Games > Blood.
+### (05/01/21)
 
-### (17/07/20)
+· 🐛 FIX: Games > Captain S shortcut.
 
-· 📦 ADD: Other > Scrcpy 1.13 (Mirror Android devices on Raspberry Pi OS/Twister OS).
+### (03/01/21)
 
-· 👌 IMPROVE: Games > Eduke32.
+· 🐛 FIX: Games > AVP, Diablo.
 
-· 👌 IMPROVE: Games > Diablo 2.
+· 👌 IMPROVE: Others > RPiPlay, Gl4ES, scrcpy.
 
-### (15/07/20)
+· 👌 IMPROVE: Games > Blood, Eduke32, SMario64
 
-· 📦 ADD: Emulation > PPSSPP v1.9.3-1063 (PSP Emulator).
+· 👌 IMPROVE: Emulators > PSP, ResidualVM. Refactor code. Change /home/pi -> $HOME.
 
-· 👌 IMPROVE: Vulkan compilation is compatible with Twister OS 🌪. Diablo 1.
+### (27/12/20)
 
-### (14/07/20)
+· 🐛 FIX: Links broken for StarCraft, StepMania, OpenMW and OpenBOR.
 
-· 📦 ADD: Configure > Compile/update Vulkan Mesa driver (EXPERIMENTAL).
+### (25/12/20)
 
-### (13/07/20)
+· 📦 ADD: Games > VVVVVV (Instead of jumping, you need to reverse gravity).
 
-· 📦 ADD: Games > Captain 'S' The Remake (AKA Capitan Sevilla).
+### (22/12/20)
 
-· 👌 IMPROVE: Multimedia > Kodi 18.7.
+· 👌 IMPROVE: Games > Diablo I binaries upgraded to 1.1.0.
 
-· ❌ REMOVE: Airplay.
+### (15/12/20)
+
+· 📦 ADD: Internet > Whatscli (Allow users to use WhatsApp via cli).
+
+· 👌 IMPROVE: Configure > Vulkan frozen on version 20.3.0 due some users reported problems with latest 21.0.0.
+
+### (13/12/20)
+
+· 📦 ADD: Multimedia > Moonlight (Open source implementation of NVIDIA's GameStream).
+
+· 👌 IMPROVE: Others > SDL2.
+
+### (06/12/20)
+
+· 📦 ADD: Games > Temptations (Retro platform game).
 
 ...
 
@@ -137,12 +155,17 @@ To see the full list of changes, read the [CHANGELOG](./CHANGELOG)
 
 ## [ Introducing PiKISS ]
 
-Install an application on Linux is not a complex task. Sometimes just type *sudo apt install* and get the application installed with all its dependencies. But... What if we need to install more than one app such as a web server or it requires many steps to complete the install process?, Is it not in the official repositories?, What if you want to get rid of input commands?. Please, an easy way to set up my WIFI network!.
+Install an application on Linux is not a complex task. Sometimes just type _sudo apt install_ and get the application installed with all its dependencies. But... What if we need to install more than one app such as a web server or it requires many steps to complete the install process?, Is it not in the official repositories?, What if you want to get rid of input commands?. Please, an easy way to set up my WIFI network!.
 
 Don't despair. **PiKISS** has come to help you...
 
-- - -
-**PiKISS** *(Pi Keeping It Simple, Stupid!)* are *scripts (Bash)* for *Raspberry Pi* boards (*Raspberry OS* mainly, [TwisterOS](https://raspbian-x.com/) and *Debian* derivates, all of them in *32 bits versions*), which has a menu that will allow you to install some applications or configure files automatically as easy as possible.
+---
+
+**PiKISS** _(Pi Keeping It Simple, Stupid!)_ are _scripts (Bash)_ for _Raspberry Pi 4_ boards which has a menu that will allow you to install some applications or configure files automatically as easy as possible. The ideal stage is:
+
+-   _Raspberry PI OS Desktop_ mainly, [TwisterOS](https://raspbian-x.com/) and _Debian_ derivates with 32 bits.
+
+-   User _pi_ or another user with sudo priviledges.
 
 The idea is to offer facilities to manage your operating system, selecting an option in a menu and answer [Yes/No]. If you need to check dependencies, install an app, modify a script at boot, add a line to a file or download other, **PiKISS** will do it for you.
 
@@ -150,39 +173,43 @@ I include not only the ability to install, but also compile programs. Do you hav
 
 What some users have said about **PiKISS**:
 
-* *"It could have happened to me!"*
+-   _"It could have happened to me!"_
 
-* *"That's silly! (I'm going to install it as soon as I get home)"*
+-   _"That's silly! (I'm going to install it as soon as I get home)"_
 
-* *"I don't need to fight with the terminal anymore? Shut up and take my money!."* - Easy, it's free.
+-   _"I don't need to fight with the terminal anymore? Shut up and take my money!."_ - Easy, it's free.
 
-**NOTE:** 100% Free of viruses and Trojans. Not available in stores. The author of **PiKISS** is not responsible if you get bored with your *Raspberry Pi* because everything is too easy. Online until I wish or *Internet* is destroyed.
+**NOTE:** 100% Free of viruses and Trojans. Not available in stores. The author of **PiKISS** is not responsible if you get bored with your _Raspberry Pi_ because everything is too easy. Online until I wish or _Internet_ is destroyed.
 
 ## [ Installation ]
 
 Just type:
 
-<pre>
-curl -sSL https://git.io/JfAPE | bash
-</pre>
+```sh-session
+$ curl -sSL https://git.io/JfAPE | bash
+```
+
+## [ Data Files 🚨 ]
+
+Honestly, I just want let you with all the work done without having to fight with the command line. The project has grown a lot, and the games I own and had hosted on the internet, can't be there because of _Copyright_. I don't understand how a game that is older than 15 years old in some cases, has these so restrictive laws in some countries. Someone should do something about it.
+
+**My solution to keep this project working is the following**: If you have copies saved for your use, just copy those links/paths in a file at `res/magic-air-copy-pikiss.txt`. You have an example of this file with instrucctions at [./res/magic-air-copy-pikiss.example](./res/magic-air-copy-pikiss.example). _PiKISS_ will read the links/files/directories in that file and install it for you when is required. Compatible and tested hosters: _dropbox.com, archive.org, anonfiles.com, pcloud.com_.
+
+You can share this file _magic-air-copy-pikiss.txt_ with your brother/sister if you paid half price for the game and if the laws of your country allow it.
 
 ## [ Update ]
 
-*PiKISS* check if new scripts are available on remote and update them automatically, but If you want to get the latest version manually, just enter into the directory with cd PiKISS and type:
+_PiKISS_ check if new scripts are available on remote and update them automatically, but If you want to get the latest version manually, just enter into the directory with cd PiKISS and type:
 
-<pre>
-git pull
-</pre>
+```sh-session
+$ git pull
+```
 
-**NOTE:** If you use another distribution other than *Raspberry OS/TwisterOS*, maybe you need to execute the next command: *git config --global http.sslVerify false*
+**NOTE:** If you use another distribution other than _Raspberry OS/TwisterOS_, maybe you need to execute the next command: _git config --global http.sslVerify false_
 
 ### [ HELP ME! ]
 
 **PiKISS** grow up according to users requests or I'll append scripts that I consider necessary, but I call **to the community** to share, improve and help to add new scripts to the existing one. If the project grow, **is up to you**.
-
-### [ DONATE ]
-
-This project has involved many hours thinking, searching, refactoring and testing code. I accept donations due the effort to make new scripts. Donations are not required or expected. Any amount that you feel is appropriate would be appreciated. Simply click on the Donate button at the end of this document. Thank you! :)
 
 ## ESPAÑOL
 
@@ -190,12 +217,13 @@ This project has involved many hours thinking, searching, refactoring and testin
 
 ### [ Presentando PiKISS ]
 
-Instalar una aplicación en Linux no es complejo. A veces basta con un *sudo apt install* y tendrás la aplicación con todas sus dependencias. Pero, ¿Y si tenemos que instalar más de una app como por ejemplo en un servidor web o necesita varios pasos para completar el proceso de instalación?, ¿Y si no está en los repositorios oficiales?, ¿Y si no quieres teclear? ¡Por favor, una manera fácil de instalar mi red WIFI!.
+Instalar una aplicación en Linux no es complejo. A veces basta con un _sudo apt install_ y tendrás la aplicación con todas sus dependencias. Pero, ¿Y si tenemos que instalar más de una app como por ejemplo en un servidor web o necesita varios pasos para completar el proceso de instalación?, ¿Y si no está en los repositorios oficiales?, ¿Y si no quieres teclear? ¡Por favor, una manera fácil de instalar mi red WIFI!.
 
 No desesperéis. Ha llegado **PiKISS** para ayudarte...
 
-- - -
-**PiKISS** *(Pi Keeping It Simple, Stupid!, "Pi manteniéndolo sencillo, ¡Estúpido!")* son unos *scripts en Bash* para placas *Raspberry Pi* (*Raspberry OS*, [TwisterOS](https://raspbian-x.com/) y derivados *Debian* todas ellas en versiones de *32 bits*), que cuenta con un menú que te va a permitir instalar algunas aplicaciones o configurar ficheros de forma automática de la manera más fácil posible. **Su misión: Simplificar la instalación de software en *Raspberry Pi* o en *ODROID-C1* y mantenerla.**
+---
+
+**PiKISS** _(Pi Keeping It Simple, Stupid!, "Pi manteniéndolo sencillo, ¡Estúpido!")_ son unos _scripts en Bash_ para placas _Raspberry Pi 4_ (_Raspberry PI OS Desktop_, [TwisterOS](https://raspbian-x.com/) y derivados _Debian_ todas ellas en versiones de _32 bits_), que cuenta con un menú que te va a permitir instalar algunas aplicaciones o configurar ficheros de forma automática de la manera más fácil posible. **Su misión: Simplificar la instalación de software en _Raspberry Pi_.**
 
 La idea es ofrecer facilidades para manejar tu distribución y que las instalaciones sean tan sencillas como seleccionar una opción en un menú y contestar [Si/No]. Si alguna conlleva algo más que instalar, por ejemplo modificar un script en el arranque, añadir una línea a un fichero, descargar otros ficheros, comprobar dependencias, **PiKISS** lo hará por ti.
 
@@ -203,38 +231,40 @@ Incluyo la posibilidad no solo de instalar, sino también de compilar programas.
 
 Lo que algunos usuarios han dicho de **PiKISS**:
 
-*"¡Se me podría haber ocurrido a mí!"*
+_"¡Se me podría haber ocurrido a mí!"_
 
-*"Menuda tontería (voy a instalarlo en cuanto llegue a casa)"*
+_"Menuda tontería (voy a instalarlo en cuanto llegue a casa)"_
 
-*"¿Ya no tengo que pelearme con la terminal?. Cállate y coge mi dinero!"* - Tranquilos, es gratis.
+_"¿Ya no tengo que pelearme con la terminal?. Cállate y coge mi dinero!"_ - Tranquilos, es gratis.
 
-**NOTA:** 100% Libre de virus y troyanos. No disponible en tiendas. El autor de *PiKISS* no se hace responsable si te aburres con tu *Raspberry Pi* porque todo es demasiado fácil. Online hasta que me plazca o se destruya *Internet*.
+**NOTA:** 100% Libre de virus y troyanos. No disponible en tiendas. El autor de _PiKISS_ no se hace responsable si te aburres con tu _Raspberry Pi_ porque todo es demasiado fácil. Online hasta que me plazca o se destruya _Internet_.
 
 ### [ Instalación ]
 
 Escribe en la terminal lo siguiente:
 
-<pre>
-curl -sSL https://git.io/JfAPE | bash
-</pre>
+```sh-session
+$ curl -sSL https://git.io/JfAPE | bash
+```
+
+## [ Ficheros de datos 🚨 ]
+
+Sinceramente, lo único que quiero es que todo funcione sin tener que pelearme con la línea de comandos. El proyecto ha crecido mucho, y los juegos que yo poseo y que tenía alojados en internet, no pueden estar allí por motivos de _Copyright_. Tampoco entiendo como un juego que tiene más de 15 años en algunos casos, tienen estas leyes tan restrictivas en algunos países. Alguien debería hacer algo al respecto.
+
+**Mi solución para que este proyecto siga funcionando es el siguiente**: Si tienes copias guardadas para tu uso, copia dichos enlaces/rutas en el fichero `res/magic-air-copy-pikiss.txt`. Tienes un ejemplo de este fichero en [./res/magic-air-copy-pikiss.example](./res/magic-air-copy-pikiss.example). _PiKISS_ leerá los enlaces/rutas de ese fichero y te instalará el que necesite cuando proceda. Hosters testeados y compatible: _dropbox.com, archive.org, anonfiles.com, pcloud.com_.
+
+Este fichero _magic-air-copy-pikiss.txt_ lo puedes compartir con tu herman@ si pagásteis a medias el juego y si las leyes de tu país lo permiten.
 
 ### [ Actualizar ]
 
-*PiKISS* comprueba si hay nuevas actualizaciones en remoto y las actualiza automaticamente, pero si quieres conseguir la última versión de forma manual, teclea en el directorio de *PiKISS*:
+_PiKISS_ comprueba si hay nuevas actualizaciones en remoto y las actualiza automaticamente, pero si quieres conseguir la última versión de forma manual, teclea en el directorio de _PiKISS_:
 
-<pre>
-git pull
-</pre>
+```sh-session
+$ git pull
+```
 
-**NOTA:** Si usas otra distribución que no sea *Raspberry OS/TwisterOS* en la *Raspberry Pi*, tal vez tengas que ejecutar esta sencencia: *git config --global http.sslVerify false*
+**NOTA:** Si usas otra distribución que no sea _Raspberry OS/TwisterOS_ en la _Raspberry Pi_, tal vez tengas que ejecutar esta sencencia: _git config --global http.sslVerify false_
 
 ### [ ¡AYÚDAME! ]
 
 **PiKISS** crecerá de acuerdo a las peticiones de los usuarios o añadiré los scripts que considere oportunos, pero hago un llamamiento a **toda la comunidad** para compartir, mejorar o agregar nuevos scripts a los ya existentes. Que este proyecto crezca **depende de tí**.
-
-### [ DONACIONES ]
-
-Este proyecto ha supuesto muchas horas de pensar, buscar, refactorizar y testear código. Acepto donaciones por el esfuerzo que supone mantener y hacer nuevos scripts. Las donaciones no se requieren ni las espero. Cualquier cantidad que sientas que es apropiada sería de agradecer. Simplemente haz click en el botón "Donate" al final del documento. ¡Gracias! :)
-
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ulysess%40gmail%2ecom&lc=GB&item_name=PiKISS&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" /></a>

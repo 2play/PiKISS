@@ -14,12 +14,6 @@ alias df='df -h'
 alias free='free -m'
 alias part='lsblk'
 alias path='echo -e ${PATH//:/\\n}'
-alias upd='sudo apt-get -qq update'
-alias upgrade='sudo apt-get -qq update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
-alias apts='apt-cache search'
-alias aptsv='apt-cache madison'
-alias apti='sudo apt install'
-alias aptiy='sudo apt install -y'
 alias ll="ls --color -lAGbh --group-directories-first --time-style='+%d %b %Y %H:%M'"
 alias god='sudo -i'
 alias rmr='rm -rf'
@@ -29,35 +23,54 @@ alias p='ps aux |grep'
 alias n='nano'
 alias nanosources='sudo nano /etc/apt/sources.list'
 alias nanofstab='sudo nano /etc/fstab'
-alias !='sudo'
 alias pk='cd /home/pi/pikiss/ && ./piKiss.sh -nup'
+alias 7zc='7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on file-rpi.7z'
+
+# APT
+alias au='sudo apt-get -qq -y update'
+alias ar='sudo apt -y autoremove'
+alias aup='au && sudo apt -y dist-upgrade && ar'
+alias afup='au && sudo apt -y full-upgrade && ar'
+alias as='apt-cache search'
+alias asv='apt-cache madison'
+alias asf='apt-file search'
+alias apiy='sudo apt install'
+alias apiy='sudo apt install -y'
+alias abdp='sudo apt-get build-dep'
 
 # Functions
 
 mk() {
-  mkdir "$1" && cd "$_" || exit
+    mkdir "$1" && cd "$_" || exit
+}
+
+my_checkinstall() {
+    # Config at /etc/checkinstallrc
+    sudo checkinstall --install=no --fstrans=yes -D --pkgname="$1" --pkgversion=1 --pkgrelease="1" --maintainer=ulysess@gmail.com --strip=no --stripso=no --addso=yes -d2 make
 }
 
 search() {
-  sudo find / -iname *"$1"*
+    sudo find / -iname *"$1"*
 }
 
-ex () {
-  if [ -f "$1" ] ; then
-      case $1 in
-        *.tar.bz2 | *.tbz2) tar xvjf "$1"   ;;
-        *.tar.gz | *.tgz)   tar xvzf "$1"   ;;
-        *.bz2)              tar jxf "$1"    ;;
-        *.rar)              unrar x "$1"    ;;
-        *.gz)               gunzip "$1"     ;;
-        *.tar)              tar xvf "$1"    ;;
-        *.zip)              unzip "$1"      ;;
-        *.Z)                uncompress "$1" ;;
-        *.7z)               7z x "$1"       ;;
-        *.exe)              cabextract "$1" ;;
-        *)                  echo "'$1': unrecognized file compression" ;;
-      esac
-  else
-      echo "'$1' is not a valid file"
-  fi
+extract() {
+    if [ -f "$1" ]; then
+        case "$1" in
+        *.tar.bz2 | *.tbz2) tar xjf "$1" ;;
+        *.tar.gz | *.tgz) tar xzf "$1" ;;
+        *.tar.xz) tar xf "$1" ;;
+        *.xz) xz --decompress "$1" ;;
+        *.bz2) tar jxf "$1" ;;
+        *.rar) unrar x "$1" ;;
+        *.gz) gunzip "$1" ;;
+        *.tar) tar xvf "$1" ;;
+        *.zip) unzip -qq -o "$1" ;;
+        *.Z) uncompress "$1" ;;
+        *.7z) p7zip -d "$1" ;;
+        *.exe) cabextract "$1" ;;
+        *) echo "'$1': unrecognized file compression" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }

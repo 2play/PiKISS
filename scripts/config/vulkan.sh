@@ -1,101 +1,80 @@
 #!/bin/bash
 #
-# Description : Vulkan driver (EXPERIMENTAL)
+# Description : Vulkan driver
 # Author      : Jose Cerrejon Gonzalez (ulysess@gmail_dot._com)
-# Version     : 1.0.2 (15/Jul/20)
+# Version     : 1.2.1 (22/Feb/21)
 # Compatible  : Raspberry Pi 4
 #
-# Info		  : Thks to PI Labs
-# Help		  : https://ninja-build.org/manual.html#ref_pool
-# 			  : https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=276412&start=25#p1678723
-# 			  : https://blogs.igalia.com/apinheiro/2020/06/v3dv-quick-guide-to-build-and-run-some-demos/
+# Info        : Thks to PI Labs
+# Help        : https://ninja-build.org/manual.html#ref_pool
+#             : https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=276412&start=25#p1678723
+#             : https://blogs.igalia.com/apinheiro/2020/06/v3dv-quick-guide-to-build-and-run-some-demos/
+#             : https://github.com/Yours3lf/rpi-vk-driver/blob/master/BUILD.md
 #
 . ./scripts/helper.sh || . ./helper.sh || wget -q 'https://github.com/jmcerrejon/PiKISS/raw/master/scripts/helper.sh'
 clear
 check_board || { echo "Missing file helper.sh. I've tried to download it for you. Try to run the script again." && exit 1; }
 
-SOURCE_CODE_URL="https://gitlab.freedesktop.org/apinheiro/mesa.git"
+readonly INSTALL_DIR="$HOME/mesa_vulkan"
+readonly SOURCE_CODE_URL="https://gitlab.freedesktop.org/mesa/mesa/-/tree/20.3"
+readonly PI_VERSION_NUMBER=$(awk </proc/device-tree/model '{print $3}')
 
 install() {
-	echo -e "\nInstalling,...\n"
-	cd "$HOME"/mesa_vulkan
-	sudo ninja -C build install
-	echo
-	glxinfo -B
-	echo "Done."
-}
-
-binary_only() {
-	echo -e "\nInstalling deps...\n"
-	sudo apt install -y ninja-build
-	install
-}
-
-install_meson() {
-	sudo apt-get remove -y meson
-	echo -e "\nChecking if meson is installed...\n"
-	if ! pip3 list | grep -F meson &>/dev/null; then
-		sudo pip3 install meson --force-reinstall
-	fi
+    echo -e "\nInstalling,...\n"
+    cd "$INSTALL_DIR" || exit
+    sudo ninja -C build install
+    echo
+    glxinfo -B
+    echo "Done."
 }
 
 install_full_deps() {
-	echo -e "\nInstalling deps...\n"
-	sudo apt-get install -y libxcb-randr0-dev libxrandr-dev \
-		libxcb-xinerama0-dev libxinerama-dev libxcursor-dev \
-		libxcb-cursor-dev libxkbcommon-dev xutils-dev \
-		xutils-dev libpthread-stubs0-dev libpciaccess-dev \
-		libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev \
-		bison flex libssl-dev libgnutls28-dev x11proto-dri2-dev \
-		x11proto-dri3-dev libx11-dev libxcb-glx0-dev \
-		libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev \
-		libva-dev x11proto-randr-dev x11proto-present-dev \
-		libclc-dev libelf-dev git build-essential mesa-utils \
-		libvulkan-dev ninja-build libvulkan1 python-mako \
-		libdrm-dev libxshmfence-dev libxxf86vm-dev libwayland-dev \
-		python3-mako wayland-protocols libwayland-egl-backend-dev \
-		cmake libassimp-dev
-	install_meson
+    echo -e "\nInstalling deps...\n"
+    sudo apt-get install -y libxcb-randr0-dev libxrandr-dev \
+        libxcb-xinerama0-dev libxinerama-dev libxcursor-dev \
+        libxcb-cursor-dev libxkbcommon-dev xutils-dev \
+        xutils-dev libpthread-stubs0-dev libpciaccess-dev \
+        libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev \
+        bison flex libssl-dev libgnutls28-dev x11proto-dri2-dev \
+        x11proto-dri3-dev libx11-dev libxcb-glx0-dev \
+        libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev \
+        libva-dev x11proto-randr-dev x11proto-present-dev \
+        libclc-dev libelf-dev git build-essential mesa-utils \
+        libvulkan-dev ninja-build libvulkan1 python-mako \
+        libdrm-dev libxshmfence-dev libxxf86vm-dev libwayland-dev \
+        python3-mako wayland-protocols libwayland-egl-backend-dev \
+        cmake libassimp-dev
+    install_meson
 }
 
 clone_repo() {
-	echo -e "\nCloning mesa repo...\n"
-	cd "$HOME"
-	git clone --single-branch --branch wip/igalia/v3dv "$SOURCE_CODE_URL" mesa_vulkan && cd "$_"
-}
-
-update_repo() {
-	cd "$HOME"/mesa_vulkan
-	git fetch --all
-	git reset --hard origin/wip/igalia/v3dv
+    echo -e "\nCloning mesa repo...\n"
+    cd || exit
+    git clone -b 20.3 https://gitlab.freedesktop.org/mesa/mesa.git "$INSTALL_DIR" && cd "$_" || exit
 }
 
 compile() {
-	if [[ -d "$HOME"/mesa_vulkan ]]; then
-		echo
-		read -p "Directory exists. Do you want to update the repo & compile it again (y/N)? " response
-		if [[ $response =~ [Yy] ]]; then
-			echo -e "\nDownloading the latest changes...\n"
-			update_repo
-		else
-			exit_message
-			return 1
-		fi
-	else
-		install_full_deps
-		clone_repo
-	fi
+    local EXTRA_PARAM
 
-	if [[ -d "$HOME"/mesa_vulkan/build ]]; then
-		rm -rf "$HOME"/mesa_vulkan/build
-	fi
+    [[ -d $INSTALL_DIR ]] && rm -rf "$INSTALL_DIR"
+    install_full_deps
+    clone_repo
 
-	meson --prefix /usr -Dplatforms=x11,drm,surfaceless,wayland -Dvulkan-drivers=broadcom -Ddri-drivers= -Dgallium-drivers=v3d,kmsro,vc4,zink -Dbuildtype=release build
-	echo -e "\nCompiling... Estimated time on Raspberry Pi 4 over USB/SSD drive (Not overclocked): ~12 min. \n"
-	ninja -C build -j"$(getconf _NPROCESSORS_ONLN)"
-	install
+    [[ -d "$INSTALL_DIR"/build ]] && rm -rf "$INSTALL_DIR"/build
+
+    if [[ $PI_VERSION_NUMBER -eq 4 ]]; then
+        EXTRA_PARAM="-mcpu=cortex-a72 -mfpu=neon-fp-armv8 -mfloat-abi=hard"
+    fi
+
+    # Check in a future the next params for better performance. It seems it's failing due some incompatible params.
+    # ... -Dgallium-drivers=v3d,kmsro,vc4,zink,virgl
+    meson --prefix /usr -Dgles1=disabled -Dgles2=enabled -Dplatforms=x11 -Dvulkan-drivers=broadcom -Ddri-drivers= -Dgallium-drivers=v3d,kmsro,vc4,virgl -Dbuildtype=release -Dc_args="$EXTRA_PARAM" -Dcpp_args="$EXTRA_PARAM" build
+    echo -e "\nCompiling... Estimated time on Raspberry Pi 4 over USB/SSD drive (Not overclocked): ~12 min. \n"
+    time ninja -C build -j"$(nproc)"
+    install
 }
 
+install_script_message
 upgrade_dist
 compile
 exit_message
